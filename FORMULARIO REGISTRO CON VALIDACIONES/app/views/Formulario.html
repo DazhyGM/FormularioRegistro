@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/assets/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Formulario</title>
+</head>
+
+<body>
+    <h1>Formulario</h1>
+    <form id="miFormulario">
+
+        <label for="documento">Documento:</label>
+        <input type="text" id="documento" name="documento" placeholder="Ingrese su número de documento"
+            pattern="\d{10,10}" title="Debe contener mínimo 10 números" required onblur="validarCampo('documento')">
+
+        <label for="nombre">Nombre y Apellido:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre y apellido"
+            pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]{3,}" title="Debe contener solo letras, mínimo 3 caracteres" required onblur="validarCampo('nombre')">
+
+        <label for="tipoDocumento">Tipo de documento:</label>
+        <select id="tipoDocumento" name="tipoDocumento" required onchange="verificarTipoDocumento()">
+            <option value="">Seleccione</option>
+            <option value="ti">Tarjeta de identidad</option>
+            <option value="cc">Cédula de ciudadanía</option>
+            <option value="ce">Cédula de extranjería</option>
+            <option value="pasaporte">Pasaporte</option>
+        </select>
+        
+
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento" required onchange="manejarCambioFecha()">
+        
+        <label for="edad">Edad:</label><span id="edad-output"></span>
+        <input type="range" id="edad" name="edad" min="1" max="100" value="0" readonly disabled>
+        
+        <label for="genero">Género:</label>
+        <select id="genero" name="genero" required onblur="validarCampo('genero')">
+            <option value="">Seleccione</option>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+            <option value="otro">Otro</option>
+        </select>
+
+        <label for="telefono">Número de teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" placeholder="Ingrese su numero de telefono" pattern="\d{10,}"
+            title="Debe contener al menos 10 números" required onblur="validarCampo('telefono')">
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" placeholder="Ingrese su correo electrónico" required onblur="validarCampo('email')">
+
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" placeholder="Ingrese una contraseña"
+            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[.#$%^*&+=]).{8,}"
+            title="Debe tener al menos 8 caracteres, una letra mayúscula, una minúscula y un carácter especial (.#$%^&+=)"
+            required onblur="validarCampo('password')">
+
+        <label>Hobbies:</label>
+        <div class="radio-group">
+            <label><input type="radio" id="hobby1" name="hobbies" value="deporte" required> Deportes</label>
+            <label><input type="radio" id="hobby2" name="hobbies" value="lectura"> Lectura</label>
+            <label><input type="radio" id="hobby3" name="hobbies" value="musica"> Música</label>
+        </div>
+
+        <label>Habilidades:</label>
+        <div class="radio-group">
+            <label><input type="checkbox" id="habilidad1" name="habilidades[]" value="programacion"> Programación</label>
+            <label><input type="checkbox" id="habilidad2" name="habilidades[]" value="dibujo"> Dibujo</label>
+            <label><input type="checkbox" id="habilidad3" name="habilidades[]" value="fotografia"> Fotografía</label>
+        </div>
+
+        <div class="form-group">
+            <label for="colorFav">Selecciona tu color favorito:</label>
+            <div class="color-container">
+                <input type="color" id="colorFav" name="colorFav" value="#000001" required
+                    oninput="document.getElementById('color-preview').style.backgroundColor = this.value">
+
+                    <button type="button" id="confirmarColorBtn" disabled>Confirmar Color</button>
+                    
+            </div>
+        </div>
+
+        <button type="submit">Enviar</button>
+        <button type="reset">Limpiar</button>
+    </form>
+
+    <script src="../../public/assets/js/validacion.js"></script>
+</body>
+</html>

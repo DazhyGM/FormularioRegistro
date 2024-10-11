@@ -1,0 +1,249 @@
+body {
+    background-image: url('../img/6.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+    margin: 20px;
+    color: rgb(255, 255, 255);
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input,
+select,
+button {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    background: #ddd;
+    /* Color predeterminado */
+    border-radius: 5px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #4CAF50;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+button {
+    width: 48%;
+    display: inline-block;
+    margin-right: 2%;
+}
+
+button[type="reset"] {
+    margin-right: 0;
+}
+
+
+input[type="radio"]:checked+label {
+    background-color: rgb(255, 255, 255);
+}
+
+.error-message {
+    color: rgb(255, 255, 255);
+}
+
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.radio-group input[type="radio"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+}
+
+.color-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+input[type="color"] {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+}
+
+.radio-group input[type="radio"] {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.radio-group input[type="radio"]:checked::before {
+    content: '';
+    width: 9px;
+    height: 9px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+}
+
+
+.radio-group label {
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+
+.radio-group input[type="checkbox"] {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+
+.radio-group input[type="checkbox"]:checked::before {
+    content: '';
+    width: 9px;
+    height: 9px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+}
+
+
+.radio-group label {
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+/* Estilo para los campos deshabilitados */
+.disabled {
+    background-color: #f0f0f0;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.custom-swal-confirm-button {
+    background-color: #28a745 !important;
+    /* Color de fondo */
+    color: white !important;
+    /* Color del texto */
+    font-size: 18px !important;
+    /* Tamaño del texto */
+    padding: 10px 0 !important;
+    /* Aumentar espacio interno superior e inferior */
+    width: 100px !important;
+    /* Ajustar el ancho del botón */
+    text-align: center !important;
+    /* Alinear el texto en el centro */
+    border-radius: 5px !important;
+    /* Borde redondeado */
+    display: inline-block !important;
+    /* Asegurarse de que se respete el ancho del botón */
+}
+
+/* Personalización del popup */
+.custom-popup {
+    font-family: 'Arial', sans-serif;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+}
+
+/* Estilo del título */
+.custom-title {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Estilo del contenido del mensaje */
+.custom-content {
+    font-size: 18px;
+    color: #666;
+}
+
+/* Personalización del botón OK */
+.custom-button {
+    background-color: #28a745 !important;
+    /* Color de fondo */
+    color: white !important;
+    /* Color del texto */
+    font-size: 18px !important;
+    /* Tamaño del texto */
+    padding: 10px 0 !important;
+    /* Aumentar espacio interno superior e inferior */
+    width: 50px !important;
+    /* Ajustar el ancho del botón */
+    text-align: center !important;
+    /* Alinear el texto en el centro */
+    border-radius: 5px !important;
+    /* Borde redondeado */
+    display: inline-block !important;
+    /* Asegurarse de que se respete el ancho del botón */
+}
+
+/* Cambio de color al pasar el ratón */
+.custom-button:hover {
+    background-color: #aa2424;
+}
